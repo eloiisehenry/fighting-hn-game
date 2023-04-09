@@ -8,6 +8,14 @@ c.fillRect(0, 0, canvas.width, canvas.height); // positions: x, y, width, height
 
 const gravity = 0.7;
 
+const background = new Sprite({
+    position: {
+        x: 0,
+        y: 0
+    },
+    imageSrc: './img/bg.png',
+});
+
 const player = new Fighter({
     position: {
     x: 0,
@@ -115,6 +123,8 @@ function animate() {
     window.requestAnimationFrame(animate);
     c.fillStyle = 'violet';
     c.fillRect(0, 0, canvas.width, canvas.height);
+    background.update();
+
     player.update();
     enemy.update();
 
