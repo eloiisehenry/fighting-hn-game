@@ -136,7 +136,18 @@ function determineWinner({player, enemy, timerId}){
     } else if(player.health < enemy.health){
         document.querySelector('#displayText').innerHTML = 'Player 2 you win';
     }
+    isGameOver({player, enemy});
 }
+
+//redemarrer automatiquement une partie si le jeu est termminé
+function isGameOver({player, enemy}){
+    if (player.health <= 0 || enemy.health <= 0){
+        setTimeout(() => {
+            document.location.reload();
+        }, 1500);
+    }
+}
+
 
 let timer = 60;
 let timerId;
