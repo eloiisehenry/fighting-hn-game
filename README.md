@@ -22,6 +22,9 @@ ArrowUp pour sauter.
 ArrowDown pour attaquer.
 
 
+---Acceder au jeu en ligne---
+
+https://fighting-hn-game.netlify.app/
 
 ---Contribuer---
 Si vous souhaitez contribuer à Fighting HN Game, vous pouvez forker le projet sur GitHub et proposer des pull requests.
