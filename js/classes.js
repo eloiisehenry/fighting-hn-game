@@ -119,11 +119,13 @@ class Fighter extends Sprite {
     this.position.y += this.velocity.y
 
     // gravity function
-    if (this.position.y + this.height + this.velocity.y >= canvas.height - 100) {
+    if (this.position.y + this.height + this.velocity.y >= canvas.height - 228) {
       this.velocity.y = 0
-      this.position.y = 330
+      this.position.y = canvas.height - this.height - 228
+
     } else this.velocity.y += gravity
   }
+
 
   attack() {
     this.switchSprite('attack')

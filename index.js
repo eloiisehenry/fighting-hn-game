@@ -1,35 +1,36 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = 1024
-canvas.height = 576
+canvas.width = 1300
+canvas.height = 800
 
 c.fillRect(0, 0, canvas.width, canvas.height)
 
-const gravity = 0.7
+const gravity = 1.5
 
 const background = new Sprite({
   position: {
     x: 0,
     y: 0
   },
-  imageSrc: './img/bg.png'
+  imageSrc: './img/bg.png',
+  scale: 1.3,
 })
 
 const shop = new Sprite({
   position: {
     x: 0,
-    y: 128
+    y: 205
   },
   imageSrc: './img/shop.png',
-  scale: 2.75,
+  scale: 3.3,
   framesMax: 6
 })
 
 const player = new Fighter({
   position: {
     x: 0,
-    y: 0
+    y: -50
   },
   velocity: {
     x: 0,
@@ -37,7 +38,7 @@ const player = new Fighter({
   },
   imageSrc: './img/samuraiMack/Idle.png',
   framesMax: 8,
-  scale: 2.5,
+  scale: 3,
   offset: {
     x: 215,
     y: 157
@@ -84,8 +85,8 @@ const player = new Fighter({
 
 const enemy = new Fighter({
   position: {
-    x: 400,
-    y: 100
+    x: 1130,
+    y: -50
   },
   velocity: {
     x: 0,
@@ -94,7 +95,7 @@ const enemy = new Fighter({
   color: 'blue',
   imageSrc: './img/kenji/Idle.png',
   framesMax: 4,
-  scale: 2.5,
+  scale: 3,
   offset: {
     x: 215,
     y: 167
@@ -131,10 +132,10 @@ const enemy = new Fighter({
   },
   attackBox: {
     offset: {
-      x: -167,
+      x: -170,
       y: 50
     },
-    width: 167,
+    width: 170,
     height: 50
   }
 })
@@ -176,10 +177,10 @@ function animate() {
   // player movement
 
   if (keys.q.pressed && player.lastKey === 'q') {
-    player.velocity.x = -10
+    player.velocity.x = -13
     player.switchSprite('run')
   } else if (keys.d.pressed && player.lastKey === 'd') {
-    player.velocity.x = 10
+    player.velocity.x = 13
     player.switchSprite('run')
   } else {
     player.switchSprite('idle')
@@ -217,7 +218,7 @@ function animate() {
       rectangle2: enemy
     }) &&
     player.isAttacking &&
-    player.framesCurrent === 4
+    player.framesCurrent === 3
   ) {
     enemy.takeHit()
     player.isAttacking = false
@@ -225,7 +226,7 @@ function animate() {
   }
 
   // if player misses
-  if (player.isAttacking && player.framesCurrent === 4) {
+  if (player.isAttacking && player.framesCurrent === 3) {
     player.isAttacking = false
   }
 
