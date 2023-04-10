@@ -32,7 +32,7 @@ function isGameOver({player, enemy}){
 }
 
 
-let timer = 30;
+let timer = 60;
 let timerId;
 function decreaseTimer(){
      // 1000ms = 1s une loupe a ete cree
