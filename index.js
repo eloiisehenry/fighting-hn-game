@@ -229,7 +229,6 @@ function animate() {
     enemy.takeHit()
     player.isAttacking = false
     document.querySelector('#enemyHealth').style.width = enemy.health + '%'
-    }
   }
 
   // if player misses
@@ -248,12 +247,8 @@ function animate() {
   ) {
     player.takeHit()
     enemy.isAttacking = false
-    document.querySelector('#playerHealth').style.width = enemy.health + '%'
-  }
 
-  // end game based on health
-  if (enemy.health <= 0 || player.health <= 0) {
-    determineWinner({ player, enemy, timerId })
+    document.querySelector('#playerHealth').style.width = player.health + '%'
   }
 
   // if player misses
@@ -261,8 +256,11 @@ function animate() {
     enemy.isAttacking = false
   }
 
-
-
+  // end game based on health
+  if (enemy.health <= 0 || player.health <= 0) {
+    determineWinner({ player, enemy, timerId })
+  }
+}
 
 animate()
 
@@ -277,7 +275,7 @@ window.addEventListener('keydown', (event) => {
         keys.a.pressed = true
         player.lastKey = 'a'
         break
-      case 'w':
+      case 'z':
         player.velocity.y = -20
         break
       case ' ':
