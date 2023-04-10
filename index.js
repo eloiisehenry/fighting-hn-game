@@ -81,7 +81,7 @@ const player = new Fighter({
       x: 100,
       y: 50
     },
-    width: 160,
+    width: 100,
     height: 50
   }
 })
@@ -139,10 +139,10 @@ const enemy = new Fighter({
   },
   attackBox: {
     offset: {
-      x: -170,
+      x: -167,
       y: 50
     },
-    width: 170,
+    width: 167,
     height: 50
   }
 })
@@ -150,7 +150,7 @@ const enemy = new Fighter({
 console.log(player)
 
 const keys = {
-  a: {
+  q: {
     pressed: false
   },
   d: {
@@ -175,18 +175,18 @@ function animate() {
   c.fillStyle = 'rgba(255, 255, 255, 0.15)'
   c.fillRect(0, 0, canvas.width, canvas.height)
   player.update()
-  enemy.update()
+  enemy.update()  
 
   player.velocity.x = 0
   enemy.velocity.x = 0
 
   // player movement
 
-  if (keys.a.pressed && player.lastKey === 'a') {
-    player.velocity.x = -5
+  if (keys.q.pressed && player.lastKey === 'q') {
+    player.velocity.x = -10
     player.switchSprite('run')
   } else if (keys.d.pressed && player.lastKey === 'd') {
-    player.velocity.x = 5
+    player.velocity.x = 10
     player.switchSprite('run')
   } else {
     player.switchSprite('idle')
@@ -201,10 +201,10 @@ function animate() {
 
   // Enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
-    enemy.velocity.x = -5
+    enemy.velocity.x = -10
     enemy.switchSprite('run')
   } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
-    enemy.velocity.x = 5
+    enemy.velocity.x = 10
     enemy.switchSprite('run')
   } else {
     enemy.switchSprite('idle')
@@ -267,14 +267,14 @@ animate()
 window.addEventListener('keydown', (event) => {
   if (!player.dead) {
     switch (event.key) {
+      case 'q':
+        keys.q.pressed = true
+        player.lastKey = 'q'
+        break
       case 'd':
         keys.d.pressed = true
         player.lastKey = 'd'
-        break
-      case 'q':
-        keys.a.pressed = true
-        player.lastKey = 'a'
-        break
+        break  
       case 'z':
         player.velocity.y = -20
         break
@@ -307,11 +307,11 @@ window.addEventListener('keydown', (event) => {
 
 window.addEventListener('keyup', (event) => {
   switch (event.key) {
+    case 'q':
+      keys.q.pressed = false
+      break
     case 'd':
       keys.d.pressed = false
-      break
-    case 'q':
-      keys.a.pressed = false
       break
   }
 
