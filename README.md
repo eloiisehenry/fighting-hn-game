@@ -11,7 +11,7 @@ Ouvrez le fichier index.html dans votre navigateur web. Le jeu se lancera automa
 *** Contrôles du joueur 1 ***
 Q pour aller à gauche.
 D pour aller à droite.
-A pour sauter.
+Z pour sauter.
 La barre d'espace pour attaquer.
 
 
@@ -22,6 +22,9 @@ ArrowUp pour sauter.
 ArrowDown pour attaquer.
 
 
+---Acceder au jeu en ligne---
+
+https://fighting-hn-game.netlify.app/
 
 ---Contribuer---
 Si vous souhaitez contribuer à Fighting HN Game, vous pouvez forker le projet sur GitHub et proposer des pull requests.
