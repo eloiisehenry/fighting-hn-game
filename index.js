@@ -35,10 +35,6 @@ const player = new Fighter({
     x: 0,
     y: 0
   },
-  offset: {
-    x: 0,
-    y: 0
-  },
   imageSrc: './img/samuraiMack/Idle.png',
   framesMax: 8,
   scale: 2.5,
@@ -63,7 +59,7 @@ const player = new Fighter({
       imageSrc: './img/samuraiMack/Fall.png',
       framesMax: 2
     },
-    attack1: {
+    attack: {
       imageSrc: './img/samuraiMack/Attack1.png',
       framesMax: 6
     },
@@ -78,7 +74,7 @@ const player = new Fighter({
   },
   attackBox: {
     offset: {
-      x: 100,
+      x: 160,
       y: 50
     },
     width: 100,
@@ -96,10 +92,6 @@ const enemy = new Fighter({
     y: 0
   },
   color: 'blue',
-  offset: {
-    x: -50,
-    y: 0
-  },
   imageSrc: './img/kenji/Idle.png',
   framesMax: 4,
   scale: 2.5,
@@ -124,7 +116,7 @@ const enemy = new Fighter({
       imageSrc: './img/kenji/Fall.png',
       framesMax: 2
     },
-    attack1: {
+    attack: {
       imageSrc: './img/kenji/Attack1.png',
       framesMax: 4
     },
@@ -147,6 +139,7 @@ const enemy = new Fighter({
   }
 })
 
+
 console.log(player)
 
 const keys = {
@@ -168,7 +161,7 @@ decreaseTimer()
 
 function animate() {
   window.requestAnimationFrame(animate)
-  c.fillStyle = 'black'
+  c.fillStyle = 'violet'
   c.fillRect(0, 0, canvas.width, canvas.height)
   background.update()
   shop.update()
@@ -236,7 +229,7 @@ function animate() {
     player.isAttacking = false
   }
 
-  // this is where our player gets hit
+  // quand player prend un coup
   if (
     rectangularCollision({
       rectangle1: enemy,
@@ -298,7 +291,6 @@ window.addEventListener('keydown', (event) => {
         break
       case 'ArrowDown':
         enemy.attack()
-
         break
     }
   }

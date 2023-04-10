@@ -101,7 +101,7 @@ class Fighter extends Sprite {
 
   update() {
     this.draw()
-    if (!this.dead) this.animateFrames()
+    if (!this.dead) {this.animateFrames()}
 
     // attack boxes
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x
@@ -126,10 +126,9 @@ class Fighter extends Sprite {
   }
 
   attack() {
-    this.switchSprite('attack1')
+    this.switchSprite('attack')
     this.isAttacking = true
   }
-
   takeHit() {
     this.health -= 10
 
@@ -142,22 +141,22 @@ class Fighter extends Sprite {
     if (this.image === this.sprites.death.image) {
       if (this.framesCurrent === this.sprites.death.framesMax - 1)
         this.dead = true
-      return
+      {return}
     }
 
     // overriding all other animations with the attack animation
     if (
-      this.image === this.sprites.attack1.image &&
-      this.framesCurrent < this.sprites.attack1.framesMax - 1
+      this.image === this.sprites.attack.image &&
+      this.framesCurrent < this.sprites.attack.framesMax - 1
     )
-      return
+      {return}
 
     // override when fighter gets hit
     if (
       this.image === this.sprites.takeHit.image &&
       this.framesCurrent < this.sprites.takeHit.framesMax - 1
     )
-      return
+      {return}
 
     switch (sprite) {
       case 'idle':
@@ -190,10 +189,10 @@ class Fighter extends Sprite {
         }
         break
 
-      case 'attack1':
-        if (this.image !== this.sprites.attack1.image) {
-          this.image = this.sprites.attack1.image
-          this.framesMax = this.sprites.attack1.framesMax
+      case 'attack':
+        if (this.image !== this.sprites.attack.image) {
+          this.image = this.sprites.attack.image
+          this.framesMax = this.sprites.attack.framesMax
           this.framesCurrent = 0
         }
         break
