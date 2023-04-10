@@ -13,7 +13,6 @@ Q pour aller à gauche.
 D pour aller à droite.
 A pour sauter.
 La barre d'espace pour attaquer.
-X pour faire une autre attaque.
 
 
 *** Contrôles du joueur 2 ***
@@ -21,7 +20,7 @@ ArrowLeft pour aller à gauche.
 ArrowRight pour aller à droite.
 ArrowUp pour sauter.
 ArrowDown pour attaquer.
-Entrer pour faire une autre attaque.
+
 
 
 ---Contribuer---
