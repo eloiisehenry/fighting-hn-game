@@ -16,10 +16,10 @@ La barre d'espace pour attaquer.
 
 
 *** Contrôles du joueur 2 ***
-ArrowLeft pour aller à gauche.
-ArrowRight pour aller à droite.
-ArrowUp pour sauter.
-ArrowDown pour attaquer.
+<-- pour aller à gauche.
+--> pour aller à droite.
+Flèche du haut pour sauter.
+Flèche du bat pour attaquer.
 
 
 ---Acceder au jeu en ligne---
