@@ -36,8 +36,8 @@ const player = new Fighter({
     x: 0,
     y: 0
   },
-  imageSrc: './img/samuraiMack/Idle.png',
-  framesMax: 8,
+  imageSrc: './img/Shawn/Idle.png',
+  framesMax: 7,
   scale: 3,
   offset: {
     x: 215,
@@ -45,37 +45,37 @@ const player = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: './img/samuraiMack/Idle.png',
-      framesMax: 8
+      imageSrc: './img/Shawn/Idle.png',
+      framesMax: 7
     },
     run: {
-      imageSrc: './img/samuraiMack/Run.png',
+      imageSrc: './img/Shawn/Run.png',
       framesMax: 8
     },
     jump: {
-      imageSrc: './img/samuraiMack/Jump.png',
+      imageSrc: './img/Shawn/Jump.png',
       framesMax: 2
     },
     fall: {
-      imageSrc: './img/samuraiMack/Fall.png',
+      imageSrc: './img/Shawn/Fall.png',
       framesMax: 2
     },
     attack: {
-      imageSrc: './img/samuraiMack/Attack1.png',
-      framesMax: 6
-    },
-    takeHit: {
-      imageSrc: './img/samuraiMack/Take Hit - white silhouette.png',
+      imageSrc: './img/Shawn/Attack.png',
       framesMax: 4
     },
+    takeHit: {
+      imageSrc: './img/Shawn/TakeHit.png',
+      framesMax: 3
+    },
     death: {
-      imageSrc: './img/samuraiMack/Death.png',
-      framesMax: 6
+      imageSrc: './img/Shawn/Death.png',
+      framesMax: 5
     }
   },
   attackBox: {
     offset: {
-      x: 160,
+      x: 145,
       y: 50
     },
     width: 100,
@@ -93,8 +93,8 @@ const enemy = new Fighter({
     y: 0
   },
   color: 'blue',
-  imageSrc: './img/kenji/Idle.png',
-  framesMax: 4,
+  imageSrc: './img/Irene/Idle.png',
+  framesMax:  9,
   scale: 3,
   offset: {
     x: 215,
@@ -102,40 +102,40 @@ const enemy = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: './img/kenji/Idle.png',
-      framesMax: 4
+      imageSrc: './img/Irene/Idle.png',
+      framesMax: 9
     },
     run: {
-      imageSrc: './img/kenji/Run.png',
+      imageSrc: './img/Irene/Run.png',
       framesMax: 8
     },
     jump: {
-      imageSrc: './img/kenji/Jump.png',
+      imageSrc: './img/Irene/Jump.png',
       framesMax: 2
     },
     fall: {
-      imageSrc: './img/kenji/Fall.png',
+      imageSrc: './img/Irene/Fall.png',
       framesMax: 2
     },
     attack: {
-      imageSrc: './img/kenji/Attack1.png',
+      imageSrc: './img/Irene/Attack.png',
       framesMax: 4
     },
     takeHit: {
-      imageSrc: './img/kenji/Take hit.png',
+      imageSrc: './img/Irene/TakeHit.png',
       framesMax: 3
     },
     death: {
-      imageSrc: './img/kenji/Death.png',
-      framesMax: 7
+      imageSrc: './img/Irene/Death.png',
+      framesMax: 5
     }
   },
   attackBox: {
     offset: {
-      x: -170,
+      x: -145,
       y: 50
     },
-    width: 170,
+    width: 90,
     height: 50
   }
 })
@@ -177,10 +177,10 @@ function animate() {
   // player movement
 
   if (keys.q.pressed && player.lastKey === 'q') {
-    player.velocity.x = -13
+    player.velocity.x = -20
     player.switchSprite('run')
   } else if (keys.d.pressed && player.lastKey === 'd') {
-    player.velocity.x = 13
+    player.velocity.x = 20
     player.switchSprite('run')
   } else {
     player.switchSprite('idle')
@@ -195,10 +195,10 @@ function animate() {
 
   // Enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
-    enemy.velocity.x = -10
+    enemy.velocity.x = -16
     enemy.switchSprite('run')
   } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
-    enemy.velocity.x = 10
+    enemy.velocity.x = 16
     enemy.switchSprite('run')
   } else {
     enemy.switchSprite('idle')
@@ -218,7 +218,7 @@ function animate() {
       rectangle2: enemy
     }) &&
     player.isAttacking &&
-    player.framesCurrent === 3
+    player.framesCurrent === 2
   ) {
     enemy.takeHit()
     player.isAttacking = false
@@ -226,7 +226,7 @@ function animate() {
   }
 
   // if player misses
-  if (player.isAttacking && player.framesCurrent === 3) {
+  if (player.isAttacking && player.framesCurrent === 3.5) {
     player.isAttacking = false
   }
 
