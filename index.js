@@ -18,8 +18,8 @@ const background = new Sprite({
     x: 0,
     y: 0
   },
-  imageSrc: './img/bg.png',
-  scale: 1.3,
+  imageSrc: './img/bg2.png',
+  scale:0.75
 })
 
 const shop = new Sprite({
