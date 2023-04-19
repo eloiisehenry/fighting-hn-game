@@ -13,11 +13,11 @@ function determineWinner({player, enemy, timerId}){
     clearTimeout(timerId);
     document.querySelector('#displayText').style.display = 'flex';
     if (player.health === enemy.health){
-        document.querySelector('#displayText').innerHTML = 'Egalité...';
+        document.querySelector('#displayText').innerHTML = 'EGALITE...';
     } else if (player.health > enemy.health){
-        document.querySelector('#displayText').innerHTML = 'Player 1 you win';
+        document.querySelector('#displayText').innerHTML = 'PLAYER 1 YOU WIN';
     } else if(player.health < enemy.health){
-        document.querySelector('#displayText').innerHTML = 'Player 2 you win';
+        document.querySelector('#displayText').innerHTML = 'PLAYER 2 YOU WIN';
     }
     isGameOver({player, enemy});
 }
