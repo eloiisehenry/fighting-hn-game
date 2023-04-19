@@ -1,3 +1,8 @@
+// controle de la musique
+const bgMusic = document.getElementById('bg-music');
+bgMusic.volume = 0.5; // Définit le volume de la musique à 50%
+bgMusic.play(); // Lance la musique
+
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
@@ -75,11 +80,11 @@ const player = new Fighter({
   },
   attackBox: {
     offset: {
-      x: 145,
+      x: 130,
       y: 50
     },
-    width: 100,
-    height: 50
+    width: 80,
+    height: 40
   }
 })
 
@@ -177,10 +182,10 @@ function animate() {
   // player movement
 
   if (keys.q.pressed && player.lastKey === 'q') {
-    player.velocity.x = -20
+    player.velocity.x = -16
     player.switchSprite('run')
   } else if (keys.d.pressed && player.lastKey === 'd') {
-    player.velocity.x = 20
+    player.velocity.x = 16
     player.switchSprite('run')
   } else {
     player.switchSprite('idle')
@@ -226,7 +231,7 @@ function animate() {
   }
 
   // if player misses
-  if (player.isAttacking && player.framesCurrent === 3.5) {
+  if (player.isAttacking && player.framesCurrent === 2) {
     player.isAttacking = false
   }
 
