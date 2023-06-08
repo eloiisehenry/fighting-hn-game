@@ -24,11 +24,11 @@ const background = new Sprite({
 
 const shop = new Sprite({
   position: {
-    x: 980,
-    y: 460
+    x: 990,
+    y: 444
   },
   imageSrc: './img/shop.png',
-  scale: 2.2,
+  scale: 2.05,
   framesMax: 6
 })
 
