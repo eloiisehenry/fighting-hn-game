@@ -13,7 +13,7 @@ Ouvrez le fichier index.html dans votre navigateur web. Le jeu se lancera automa
 Q pour aller à gauche.
 D pour aller à droite.
 Z pour sauter.
-La barre d'espace pour attaquer.
+S pour attaquer.
 
 
 *** Contrôles du joueur 2 ***
