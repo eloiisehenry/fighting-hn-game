@@ -9,17 +9,19 @@ Téléchargez le code source de Fighting HN Game et extrayez-le sur votre ordina
 Ouvrez le fichier index.html dans votre navigateur web. Le jeu se lancera automatiquement et vous pourrez commencer à jouer.
 
 *** Contrôles du joueur 1 ***
+
 Q pour aller à gauche.
 D pour aller à droite.
 Z pour sauter.
-La barre d'espace pour attaquer.
+S pour attaquer.
 
 
 *** Contrôles du joueur 2 ***
-<-- pour aller à gauche.
---> pour aller à droite.
-Flèche du haut pour sauter.
-Flèche du bat pour attaquer.
+
+⬅️ pour aller à gauche.
+➡️ pour aller à droite.
+⬆️ pour sauter.
+⬇️ pour attaquer.
 
 
 ---Acceder au jeu en ligne---
