@@ -28,3 +28,4 @@ S pour attaquer.
 
 https://fighting-hn-game.netlify.app/
 
+PS: ne pas hésiter à recharger la page si elle prend du temps à se recharger automatiquement!
