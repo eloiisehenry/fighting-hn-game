@@ -15,9 +15,9 @@ function determineWinner({player, enemy, timerId}){
     if (player.health === enemy.health){
         document.querySelector('#displayText').innerHTML = 'EGALITE...';
     } else if (player.health > enemy.health){
-        document.querySelector('#displayText').innerHTML = 'SHAWN WIN BY KO !';
+        document.querySelector('#displayText').innerHTML = 'SHAWN WIN !';
     } else if(player.health < enemy.health){
-        document.querySelector('#displayText').innerHTML = 'IRENE WIN BY KO !';
+        document.querySelector('#displayText').innerHTML = 'IRENE WIN !';
     }
     isGameOver({player, enemy});
 }

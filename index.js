@@ -265,18 +265,18 @@ animate()
 window.addEventListener('keydown', (event) => {
   if (!player.dead) {
     switch (event.key) {
-      case 'q' || 'Q':
+      case 'q':
         keys.q.pressed = true
-        player.lastKey = 'q' || 'Q'
+        player.lastKey = 'q'
         break
-      case 'd' || 'D':
+      case 'd':
         keys.d.pressed = true
-        player.lastKey = 'd' || 'D'
+        player.lastKey = 'd'
         break  
-      case 'z' || 'Z':
+      case 'z':
         player.velocity.y = -20
         break
-      case 's' || 'S':
+      case 's':
         player.attack()
         break
     }
